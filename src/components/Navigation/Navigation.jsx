@@ -5,10 +5,16 @@ export default function Navigation() {
   return (
     <nav>
       <NavLink
-        to=""
+        to="/"
         className={({ isActive }) => (isActive ? s.active : s.link)}
       >
         Home
+      </NavLink>
+      <NavLink
+        to="/movies"
+        className={({ isActive }) => (isActive ? s.active : s.link)}
+      >
+        Movies
       </NavLink>
     </nav>
   );

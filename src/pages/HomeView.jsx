@@ -1,31 +1,34 @@
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import  {fetchTrendingMovies} from '../components/API/movie-api'
 import PageHeading from '../components/PageHeading/PageHeading';
 
 export default function HomeView() {
+
+  const [movies, setMovies] = useState(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    fetchTrendingMovies().then(setMovies);
+  },[])
   return (
     <>
-      <PageHeading text="Home title" />
+      <PageHeading text="Trending today" />
 
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex vel velit
-        nihil illo est! Quos cum rerum dolores voluptates odio iste est nam.
-      </p>
-
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex vel velit
-        nihil illo est! Quos cum rerum dolores voluptates odio iste est .
-      </p>
-
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex vel velit
-        nihil illo est! Quos cum rerum dolores voluptates odio iste est nam
-        excepturi .
-      </p>
-
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex vel velit
-        nihil illo est! Quos cum rerum dolores voluptates odio iste est nam
-        excepturi placeat .
-      </p>
+      {movies && (
+        <ul>
+          {movies.map(movie => (
+            <li key={movie.id}>
+              <Link
+                to={`/movies/${movie.id}`}
+                state={{ from: location, label: 'Go to Home' }}
+              >
+                {movie.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </>
   );
 }
