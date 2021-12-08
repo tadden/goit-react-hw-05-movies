@@ -1,0 +1,23 @@
+.container {
+  margin-top: 20px;
+}
+
+.castList {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-left: -12px;
+  margin-top: -12px;
+  justify-content: flex-start;
+}
+
+.castInfo {
+  padding: 7px;
+}
+
+.castItem {
+  margin-left: 12px;
+  margin-top: 12px;
+  flex-basis: calc((100% - 90px) / 6);
+  background-color: #eeeeee;
+}

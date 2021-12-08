@@ -1,0 +1,33 @@
+.container {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn {
+  margin-bottom: 10px;
+}
+
+.img {
+  display: block;
+  max-width: 250px;
+  height: auto;
+}
+.data {
+  margin-left: 30px;
+}
+.list {
+  display: flex;
+  list-style: none;
+  padding-left: 100;
+  margin: 0;
+}
+li:not(:last-child) {
+  margin-right: 8px;
+}
+.link__list {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.additional__list {
+  display: flex;
+}

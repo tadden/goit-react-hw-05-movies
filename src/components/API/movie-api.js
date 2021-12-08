@@ -15,6 +15,11 @@ axios.defaults.params = {
     api_key: URL.KEY,
 };
 
+export async function fetchMovies( query = '', page = 1) {
+    const { data } = await axios(`${URL.BASE}/search/movie?&query=${query}`);
+    return (data.results);
+}
+
 export async function fetchTrendingMovies() {
   const { data } = await axios(`${URL.BASE}/trending/${URL.PATH}/${URL.TIME}`);
     return (data.results);

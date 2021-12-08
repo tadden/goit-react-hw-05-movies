@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import  {fetchTrendingMovies} from '../components/API/movie-api'
-import PageHeading from '../components/PageHeading/PageHeading';
+import  {fetchTrendingMovies} from '../../components/API/movie-api'
+import PageHeading from '../../components/PageHeading/PageHeading';
 
 export default function HomeView() {
 
